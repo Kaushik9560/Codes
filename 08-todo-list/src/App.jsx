@@ -8,6 +8,8 @@
  */
 import TodoList from './TodoList.jsx'
 
-export default function App() {
+function App() {
   return <TodoList />
 }
+
+export default App

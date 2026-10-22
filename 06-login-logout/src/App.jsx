@@ -8,6 +8,8 @@
  */
 import LoginLogout from './LoginLogout.jsx'
 
-export default function App() {
+function App() {
   return <LoginLogout />
 }
+
+export default App

@@ -8,6 +8,8 @@
  */
 import StyledComponent from './StyledComponent.jsx'
 
-export default function App() {
+function App() {
   return <StyledComponent />
 }
+
+export default App

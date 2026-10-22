@@ -8,6 +8,8 @@
  */
 import ColorChanger from './ColorChanger.jsx'
 
-export default function App() {
+function App() {
   return <ColorChanger />
 }
+
+export default App

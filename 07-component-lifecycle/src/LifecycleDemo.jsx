@@ -5,37 +5,40 @@
  */
 import { Component } from 'react'
 
-export default class LifecycleDemo extends Component {
+class LifecycleDemo extends Component {
   constructor(props) {
     super(props)
     this.state = { count: 0 }
-    console.log('MOUNTING: constructor() - Component is created')
+    console.log('constructor() - Component is created')
   }
 
   componentDidMount() {
-    console.log('MOUNTING: componentDidMount() - Component is visible')
+    console.log('componentDidMount() - Component is shown')
   }
 
   componentDidUpdate() {
-    console.log('UPDATING: componentDidUpdate() - New count:', this.state.count)
+    console.log('componentDidUpdate() - Count changed:', this.state.count)
   }
 
   componentWillUnmount() {
-    console.log('UNMOUNTING: componentWillUnmount() - Component removed')
+    console.log('componentWillUnmount() - Component is removed')
   }
 
-  increment = () => {
-    this.setState((previous) => ({ count: previous.count + 1 }))
+  incrementCount() {
+    this.setState({ count: this.state.count + 1 })
   }
 
   render() {
-    console.log('render() - Rendering UI')
+    console.log('render() - Displaying the component')
+
     return (
-      <div style={{ border: '2px solid #2563eb', padding: '15px', margin: '15px 0', borderRadius: '8px' }}>
-        <h2>Child Component (Lifecycle Counter)</h2>
-        <p aria-live="polite">Count: <strong>{this.state.count}</strong></p>
-        <button onClick={this.increment}>Click to Update State</button>
+      <div className="child-box">
+        <h2>Child Component</h2>
+        <p aria-live="polite">Count: {this.state.count}</p>
+        <button onClick={() => this.incrementCount()}>Click to Update State</button>
       </div>
     )
   }
 }
+
+export default LifecycleDemo

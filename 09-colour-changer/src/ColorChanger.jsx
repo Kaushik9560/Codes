@@ -5,37 +5,25 @@
  */
 import { useState } from 'react'
 
-const colors = [
-  { name: 'Purple', value: '#667eea' },
-  { name: 'Blue', value: '#3498db' },
-  { name: 'Green', value: '#2ecc71' },
-  { name: 'Orange', value: '#f39c12' },
-  { name: 'Red', value: '#e74c3c' },
-  { name: 'Pink', value: '#e84393' },
-]
-
-export default function ColorChanger() {
+function ColorChanger() {
   const [color, setColor] = useState('#667eea')
 
   return (
-    <div style={{ minHeight: '100vh', boxSizing: 'border-box', display: 'grid', placeItems: 'center', backgroundColor: color, padding: '24px', transition: 'background-color 0.5s ease', fontFamily: 'Arial, sans-serif' }}>
-      <div style={{ width: '100%', maxWidth: '600px', boxSizing: 'border-box', padding: '30px', textAlign: 'center', backgroundColor: 'white', color: '#333', borderRadius: '20px', boxShadow: '0 15px 40px rgba(0,0,0,0.25)' }}>
+    <div className="color-page" style={{ backgroundColor: color }}>
+      <div className="container">
         <h1>Dynamic Colour Changer</h1>
-        <p aria-live="polite">Current Colour: <strong>{color}</strong></p>
+        <p aria-live="polite">Current Colour: {color}</p>
         <h2>Choose a Colour</h2>
-        <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: '12px' }}>
-          {colors.map((item) => (
-            <button
-              key={item.value}
-              onClick={() => setColor(item.value)}
-              aria-pressed={color === item.value}
-              style={{ padding: '12px 20px', border: '2px solid #333', borderRadius: '10px', backgroundColor: item.value, color: '#111', fontWeight: 'bold', cursor: 'pointer' }}
-            >
-              {item.name}
-            </button>
-          ))}
-        </div>
+
+        <button onClick={() => setColor('#667eea')}>Purple</button>
+        <button onClick={() => setColor('#3498db')}>Blue</button>
+        <button onClick={() => setColor('#2ecc71')}>Green</button>
+        <button onClick={() => setColor('#f39c12')}>Orange</button>
+        <button onClick={() => setColor('#e74c3c')}>Red</button>
+        <button onClick={() => setColor('#e84393')}>Pink</button>
       </div>
     </div>
   )
 }
+
+export default ColorChanger

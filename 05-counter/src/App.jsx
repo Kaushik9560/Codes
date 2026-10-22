@@ -8,6 +8,8 @@
  */
 import Counter from './Counter.jsx'
 
-export default function App() {
+function App() {
   return <Counter />
 }
+
+export default App

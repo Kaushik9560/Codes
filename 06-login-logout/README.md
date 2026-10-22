@@ -34,7 +34,6 @@ Terminal mein printed Local URL browser mein kholo. Agar repo pehle se clone hai
 - `src/LoginLogout.jsx`: is lab program ki main logic aur UI.
 - `src/index.css`: is project ki base styling.
 
-
 ## Output check karo
 
 1. Pehle Please log in. message dikhega.
@@ -48,9 +47,8 @@ Poora **`06-login-logout`** folder rakho. Baaki project folders delete kar sakte
 ## Apne doosre React project mein use karo
 
 1. `src/App.jsx` aur `src/LoginLogout.jsx` ko apne project ke `src/` mein copy karo.
-2. Is component ki styles usi JSX file mein hain.
-3. Base styling ke liye `src/index.css` copy karo; apni entry `src/main.jsx` se ise import karo.
-4. Apne project folder se `npm install` aur `npm run dev` chalao.
+2. `src/index.css` bhi copy karo; apni entry `src/main.jsx` se ise import karo.
+3. Apne project folder se `npm install` aur `npm run dev` chalao.
 
 ## Checks
 

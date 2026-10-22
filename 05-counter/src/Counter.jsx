@@ -5,21 +5,31 @@
  */
 import { useState } from 'react'
 
-const buttonStyle = {
-  padding: '8px 16px', margin: '5px', cursor: 'pointer',
-  backgroundColor: '#1769aa', color: 'white', border: 'none', borderRadius: '4px',
-}
-
-export default function Counter() {
+function Counter() {
+  // count ki starting value 0 hai.
   const [count, setCount] = useState(0)
 
+  function increment() {
+    setCount(count + 1)
+  }
+
+  function decrement() {
+    setCount(count - 1)
+  }
+
+  function reset() {
+    setCount(0)
+  }
+
   return (
-    <div style={{ textAlign: 'center', padding: '30px 20px', fontFamily: 'Arial, sans-serif' }}>
+    <div className="container">
       <h1>Counter</h1>
-      <p style={{ fontSize: '36px' }} aria-live="polite">{count}</p>
-      <button style={buttonStyle} onClick={() => setCount((value) => value - 1)}>- Decrement</button>
-      <button style={{ ...buttonStyle, backgroundColor: '#b91c1c' }} onClick={() => setCount(0)}>Reset</button>
-      <button style={{ ...buttonStyle, backgroundColor: '#15803d' }} onClick={() => setCount((value) => value + 1)}>+ Increment</button>
+      <h2 aria-live="polite">{count}</h2>
+      <button onClick={decrement}>- Decrement</button>
+      <button onClick={reset}>Reset</button>
+      <button onClick={increment}>+ Increment</button>
     </div>
   )
 }
+
+export default Counter

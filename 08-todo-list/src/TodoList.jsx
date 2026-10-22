@@ -5,65 +5,87 @@
  */
 import { useState } from 'react'
 
-const buttonStyle = { padding: '8px 12px', cursor: 'pointer' }
-
-export default function TodoList() {
+function TodoList() {
   const [task, setTask] = useState('')
   const [todos, setTodos] = useState([])
+  const [nextId, setNextId] = useState(1)
+
+  function handleInput(event) {
+    setTask(event.target.value)
+  }
 
   function addTodo(event) {
     event.preventDefault()
-    const text = task.trim()
-    if (!text) return
 
-    const newTodo = { id: crypto.randomUUID(), text, completed: false }
-    setTodos((previous) => [...previous, newTodo])
+    if (task.trim() === '') {
+      return
+    }
+
+    const newTodo = {
+      id: nextId,
+      text: task.trim(),
+      completed: false,
+    }
+
+    // concat purani list ko badle bina ek nayi list banata hai.
+    const newTodos = todos.concat(newTodo)
+    setTodos(newTodos)
+    setNextId(nextId + 1)
     setTask('')
   }
 
   function completeTodo(id) {
-    setTodos((previous) => previous.map((todo) => (
-      todo.id === id ? { ...todo, completed: true } : todo
-    )))
+    const updatedTodos = todos.map(function (todo) {
+      if (todo.id === id) {
+        return {
+          id: todo.id,
+          text: todo.text,
+          completed: true,
+        }
+      }
+
+      return todo
+    })
+
+    setTodos(updatedTodos)
   }
 
   function deleteTodo(id) {
-    setTodos((previous) => previous.filter((todo) => todo.id !== id))
+    // Sirf woh tasks rakho jinki id delete wali id se alag hai.
+    const remainingTodos = todos.filter(function (todo) {
+      return todo.id !== id
+    })
+
+    setTodos(remainingTodos)
   }
 
   return (
-    <div style={{ maxWidth: '600px', margin: '0 auto', padding: '30px 20px', fontFamily: 'Arial, sans-serif' }}>
+    <div className="container">
       <h1>TODO LIST</h1>
+
       <form onSubmit={addTodo}>
         <label htmlFor="task">New task</label>
-        <div style={{ display: 'flex', gap: '8px', margin: '10px 0 20px' }}>
-          <input
-            id="task"
-            type="text"
-            placeholder="Enter a task..."
-            value={task}
-            onChange={(event) => setTask(event.target.value)}
-            style={{ flex: 1, minWidth: 0, padding: '10px' }}
-          />
-          <button type="submit" style={buttonStyle}>Add</button>
-        </div>
+        <input id="task" value={task} onChange={handleInput} placeholder="Enter a task..." />
+        <button type="submit">Add</button>
       </form>
-      {todos.length === 0 && <p>No tasks yet. Add your first task! 🎯</p>}
-      <ul style={{ listStyle: 'none', padding: 0 }}>
-        {todos.map((todo) => (
-          <li key={todo.id} style={{ border: '1px solid #ccc', borderRadius: '8px', padding: '12px', marginBottom: '10px' }}>
-            <p style={{ textDecoration: todo.completed ? 'line-through' : 'none', overflowWrap: 'anywhere' }}>
-              {todo.completed ? '✓' : '○'} {todo.text}
-            </p>
-            <div style={{ display: 'flex', gap: '8px' }}>
-              <button style={buttonStyle} onClick={() => completeTodo(todo.id)} disabled={todo.completed}>
+
+      {todos.length === 0 && <p>No tasks yet. Add your first task!</p>}
+
+      <ul>
+        {todos.map(function (todo) {
+          return (
+            <li key={todo.id}>
+              {todo.completed ? <del>{todo.text}</del> : <span>{todo.text}</span>}
+              <button onClick={() => completeTodo(todo.id)} disabled={todo.completed}>
                 {todo.completed ? 'Done ✓' : 'Done'}
               </button>
-              <button style={buttonStyle} onClick={() => deleteTodo(todo.id)}>Delete</button>
-            </div>
-          </li>
-        ))}
+              <button onClick={() => deleteTodo(todo.id)}>Delete</button>
+            </li>
+          )
+        })}
       </ul>
     </div>
   )
 }
+
+export default TodoList

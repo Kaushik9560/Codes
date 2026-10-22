@@ -6,23 +6,29 @@
 import { useState } from 'react'
 import './StyledComponent.css'
 
-export default function StyledComponent() {
+function StyledComponent() {
   const [message, setMessage] = useState('')
 
+  function showMessage() {
+    setMessage('Great! You are learning React!')
+  }
+
   return (
-    <div className="styling-page">
-      <div className="styling-card">
+    <div className="page">
+      <div className="card">
         <h1>React Styling</h1>
-        <p className="styling-description">This component is styled using an external CSS file.</p>
-        <div className="styling-info-box">
+        <p>This component is styled using an external CSS file.</p>
+
+        <div className="info-box">
           <h2>External CSS</h2>
-          <p>The styles for this React component are written in a separate CSS file.</p>
+          <p>The styles are written in StyledComponent.css.</p>
         </div>
-        <button className="styling-learn-btn" onClick={() => setMessage('🎉 Great! You are learning React!')}>
-          Learn React
-        </button>
-        {message && <p className="styling-success-message" role="status">{message}</p>}
+
+        <button onClick={showMessage}>Learn React</button>
+        <p className="message" role="status">{message}</p>
       </div>
     </div>
   )
 }
+
+export default StyledComponent

@@ -9,17 +9,25 @@
 import { useState } from 'react'
 import LifecycleDemo from './LifecycleDemo.jsx'
 
-export default function App() {
+function App() {
   const [showComponent, setShowComponent] = useState(true)
 
+  function toggleComponent() {
+    setShowComponent(!showComponent)
+  }
+
   return (
-    <div style={{ padding: '20px', fontFamily: 'Arial, sans-serif' }}>
+    <div className="container">
       <h1>React Lifecycle Visualizer</h1>
-      <p>Open your browser developer tools → Console to see lifecycle messages.</p>
-      <button onClick={() => setShowComponent((value) => !value)}>
+      <p>Open browser developer tools and select Console to see the messages.</p>
+
+      <button onClick={toggleComponent}>
         {showComponent ? 'Destroy / Unmount Component' : 'Mount / Create Component'}
       </button>
+
       {showComponent && <LifecycleDemo />}
     </div>
   )
 }
+
+export default App

@@ -34,7 +34,6 @@ Terminal mein printed Local URL browser mein kholo. Agar repo pehle se clone hai
 - `src/LifecycleDemo.jsx`: is lab program ki main logic aur UI.
 - `src/index.css`: is project ki base styling.
 
-
 ## Output check karo
 
 1. Browser developer tools (F12 ya Inspect) kholkar Console tab kholo.
@@ -42,7 +41,6 @@ Terminal mein printed Local URL browser mein kholo. Agar repo pehle se clone hai
 3. Click to Update State se count badhega aur componentDidUpdate() log aayega.
 4. Destroy / Unmount Component se componentWillUnmount() log aayega.
 5. Mount / Create Component se child dobara banega aur count 0 se start hoga.
-6. React StrictMode development mein lifecycle logs repeat kar sakta hai.
 
 ## Sirf yeh project rakhna hai
 
@@ -51,9 +49,8 @@ Poora **`07-component-lifecycle`** folder rakho. Baaki project folders delete ka
 ## Apne doosre React project mein use karo
 
 1. `src/App.jsx` aur `src/LifecycleDemo.jsx` ko apne project ke `src/` mein copy karo.
-2. Is component ki styles usi JSX file mein hain.
-3. Base styling ke liye `src/index.css` copy karo; apni entry `src/main.jsx` se ise import karo.
-4. Apne project folder se `npm install` aur `npm run dev` chalao.
+2. `src/index.css` bhi copy karo; apni entry `src/main.jsx` se ise import karo.
+3. Apne project folder se `npm install` aur `npm run dev` chalao.
 
 ## Checks
 

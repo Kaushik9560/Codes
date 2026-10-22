@@ -2,6 +2,8 @@
 
 V Semester BCA frontend lab ke 7 dedicated React projects. Har folder ka apna `src/App.jsx`, component, `package.json` aur setup hai.
 
+Code mein basic `useState`, named functions, `if` conditions aur simple CSS use hui hai. TODO list mein `concat`, `map` aur `filter` ke steps alag likhe hain. Lifecycle exercise class component ke standard methods dikhati hai.
+
 ## Clone aur run
 
 Example: component lifecycle project.

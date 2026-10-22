@@ -8,6 +8,8 @@
  */
 import Welcome from './Welcome.jsx'
 
-export default function App() {
+function App() {
   return <Welcome />
 }
+
+export default App

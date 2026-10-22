@@ -4,13 +4,9 @@
  * 2. npm run dev chalao aur terminal ka Local URL kholo.
  * 3. UI edit karne ke liye App.jsx aur uski component file kholo.
  */
-import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
 
-createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <App />
-  </StrictMode>,
-)
+const root = createRoot(document.getElementById('root'))
+root.render(<App />)

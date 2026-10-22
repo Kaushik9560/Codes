@@ -1,13 +1,27 @@
-/* Base styles: src/main.jsx is file ko import karti hai. Project folder se npm run dev chalao. */
-:root {
-  font-family: Arial, Helvetica, sans-serif;
-  color: #1f2937;
-  background: white;
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
+/*
+ * Base styles: main.jsx is file ko import karti hai.
+ * Project folder se npm install, phir npm run dev chalao.
+ */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: white;
+  color: #222;
 }
-body { margin: 0; min-width: 280px; }
-button, input, select { font: inherit; }
-button { cursor: pointer; }
-button:disabled { cursor: default; }
-:focus-visible { outline: 3px solid #2563eb; outline-offset: 3px; }
+
+.container {
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 20px;
+  text-align: center;
+}
+
+button {
+  margin: 5px;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: default;
+}

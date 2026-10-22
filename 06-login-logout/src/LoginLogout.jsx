@@ -5,21 +5,33 @@
  */
 import { useState } from 'react'
 
-export default function LoginLogout() {
+function LoginLogout() {
   const [isLoggedIn, setIsLoggedIn] = useState(false)
 
+  function toggleLogin() {
+    if (isLoggedIn) {
+      setIsLoggedIn(false)
+    } else {
+      setIsLoggedIn(true)
+    }
+  }
+
+  let message = 'Please log in.'
+  let buttonText = 'Login'
+
+  // Login hone par message aur button ka text badal do.
+  if (isLoggedIn) {
+    message = 'Welcome! You are logged in.'
+    buttonText = 'Logout'
+  }
+
   return (
-    <div style={{ textAlign: 'center', padding: '30px 20px', fontFamily: 'Arial, sans-serif' }}>
+    <div className="container">
       <h1>Conditional Rendering Example</h1>
-      <h2 aria-live="polite">
-        {isLoggedIn ? 'Welcome! You are logged in.' : 'Please log in.'}
-      </h2>
-      <button
-        style={{ padding: '10px 20px', cursor: 'pointer' }}
-        onClick={() => setIsLoggedIn((value) => !value)}
-      >
-        {isLoggedIn ? 'Logout' : 'Login'}
-      </button>
+      <h2 aria-live="polite">{message}</h2>
+      <button onClick={toggleLogin}>{buttonText}</button>
     </div>
   )
 }
+
+export default LoginLogout
