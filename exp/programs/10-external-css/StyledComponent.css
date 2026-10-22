@@ -1,4 +1,8 @@
 /*
+ * DIRECT RUN: is file ko isi folder mein App.jsx ke saath rakho.
+ * Isi project folder se npm install, phir npm run dev chalao.
+ * Neeche wale src/ steps kisi doosre React project mein copy karne ke liye hain.
+ *
  * PROGRAM 10 - External CSS file: use karne ke steps
  * 1. Program 10 ka App.jsx apne project ke src/App.jsx mein paste karo.
  * 2. Is poori CSS file ko copy karo; src/StyledComponent.css banao aur paste karo.

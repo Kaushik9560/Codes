@@ -4,6 +4,23 @@ Seven React programs (4–10) based on **V SEM BCA-MANUAL FRONTEND LAB PROGRAM-2
 
 Each program keeps its React code in one `App.jsx`, so students can copy the entire file into their own React project. No UI libraries or extra packages are required beyond React and React DOM. Program 10 also needs its external CSS file because external styling is the exercise.
 
+## Clone and run just one project
+
+Every folder in `programs/` is now a complete, independent npm project. Example for the counter:
+
+```bash
+git clone https://github.com/Kaushik9560/Codes.git
+cd Codes/exp/programs/05-counter
+npm install
+npm run dev
+```
+
+Open the Local URL printed by Vite. For another program, replace `05-counter` with its folder name from the table below. Each folder has its own README with exact commands. If already cloned, run `git pull` from the repository root, then enter the selected project folder.
+
+Keep the whole selected program folder and delete the other program folders if you wish. You can also copy/move the selected folder anywhere and run it there. Keep the files inside it together: its own `package.json`, lockfile, Vite/ESLint configuration, `index.html`, `main.jsx`, `index.css`, and `App.jsx` (plus `StyledComponent.css` for program 10). These projects do not import files from parent or sibling folders.
+
+For these independent projects, `App.jsx` is directly in the program folder. The `src/App.jsx` instructions below apply when copying the example into another React project.
+
 ## Programs
 
 | No. | Program / copyable file | Additional file | Expected result |
@@ -69,4 +86,4 @@ For program 7, open browser developer tools → Console. Increment the child cou
 
 Upload the complete `exp` folder contents, including `programs/`, `src/`, `public/`, `package.json`, `package-lock.json`, `index.html`, configuration files, and this README. Keep `.gitignore`; do not upload `node_modules/` or `dist/`.
 
-If you use `exp` as the GitHub repository root, the program links in this README work directly. If you upload the parent folder, open `exp/README.md` to browse the programs. Each program folder is a copyable example, not a separate npm project; run the collection from the folder containing `package.json`.
+If you use `exp` as the GitHub repository root, the program links in this README work directly. If you upload the parent folder, open `exp/README.md` to browse the programs. Run an independent program from its own folder containing its `package.json`. Run the combined dropdown preview from `exp/` with all program folders present.

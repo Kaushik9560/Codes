@@ -1,7 +1,19 @@
 /*
  * PROGRAM 5 - Counter using useState
  *
- * USE KARNE KE STEPS (React + Vite, JavaScript):
+ * DIRECT CLONE KARKAR RUN KARO (copy-paste ki zarurat nahi):
+ * 1. Terminal mein repo clone karo:
+ *    git clone https://github.com/Kaushik9560/Codes.git
+ * 2. Project folder mein jao: cd Codes/exp/programs/05-counter
+ * 3. Dependencies install karo: npm install
+ * 4. Project chalao: npm run dev; Vite ka Local URL browser mein kholo.
+ * 5. Program change karna ho to isi folder ki App.jsx edit karo.
+ * 6. Yeh poora folder independent hai. Baaki program folders delete kar sakte ho,
+ *    ya sirf is folder ko kisi doosri location par copy/move karke chala sakte ho.
+ *    Is folder ke andar ki project files saath rakho.
+ * Agar terminal pehle se isi project folder mein hai, seedha step 3 se shuru karo.
+ *
+ * APNE EXISTING REACT PROJECT MEIN COPY KARNE KE STEPS:
  * 1. Agar React project pehle se hai to step 2 par jao. Naya project banana ho to:
  *    npm create vite@latest my-react-lab -- --template react
  *    cd my-react-lab
