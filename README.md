@@ -1,53 +1,54 @@
 # Codes
 
-V Semester BCA — Frontend React Lab
+V Semester BCA frontend lab ke 7 dedicated React projects. Har folder ka apna `src/App.jsx`, component, `package.json` aur setup hai.
 
-Har React program ab apna independent project hai. Repo clone karo, pasand ke program folder mein jao aur run karo. Baaki program folders delete kar sakte ho.
+## Clone aur run
 
-## Clone aur run — Counter example
+Example: component lifecycle project.
 
 ```bash
 git clone https://github.com/Kaushik9560/Codes.git
-cd Codes/exp/programs/05-counter
+cd Codes/07-component-lifecycle
 npm install
 npm run dev
 ```
 
-Vite ka Local URL browser mein kholo. Node.js 22.12+ ya Node 24 installed hona chahiye. Agar repo pehle se clone hai to uski root se `git pull` karo, phir desired project folder mein jao.
+Vite ka Local URL browser mein kholo. Node.js 22.12+ ya Node 24 installed hona chahiye. Agar repo pehle se clone hai to repo root par `git pull` karo, phir desired project folder mein jao.
 
-## Apna project chuno
+## Projects
 
-Counter ke badle neeche diye folder mein jaakar `npm install` aur `npm run dev` chalao. Har folder ka apna README hai.
+| No. | Project | Main component |
+| --- | --- | --- |
+| 4 | [Welcome using JSX](04-welcome-jsx/README.md) | [`Welcome.jsx`](04-welcome-jsx/src/Welcome.jsx) |
+| 5 | [Counter](05-counter/README.md) | [`Counter.jsx`](05-counter/src/Counter.jsx) |
+| 6 | [Login and Logout](06-login-logout/README.md) | [`LoginLogout.jsx`](06-login-logout/src/LoginLogout.jsx) |
+| 7 | [Component lifecycle methods](07-component-lifecycle/README.md) | [`LifecycleDemo.jsx`](07-component-lifecycle/src/LifecycleDemo.jsx) |
+| 8 | [TODO list](08-todo-list/README.md) | [`TodoList.jsx`](08-todo-list/src/TodoList.jsx) |
+| 9 | [Dynamic colour changer](09-colour-changer/README.md) | [`ColorChanger.jsx`](09-colour-changer/src/ColorChanger.jsx) |
+| 10 | [External CSS styling](10-external-css/README.md) | [`StyledComponent.jsx`](10-external-css/src/StyledComponent.jsx) |
 
-| Program | Independent project |
-| --- | --- |
-| 4. Welcome / JSX | [04-welcome-jsx](exp/programs/04-welcome-jsx/README.md) |
-| 5. Counter | [05-counter](exp/programs/05-counter/README.md) |
-| 6. Login / Logout | [06-login-logout](exp/programs/06-login-logout/README.md) |
-| 7. Component lifecycle | [07-component-lifecycle](exp/programs/07-component-lifecycle/README.md) |
-| 8. TODO list | [08-todo-list](exp/programs/08-todo-list/README.md) |
-| 9. Colour changer | [09-colour-changer](exp/programs/09-colour-changer/README.md) |
-| 10. External CSS | [10-external-css](exp/programs/10-external-css/README.md) |
+Har project ka structure:
+
+```text
+project-folder/
+  package.json
+  package-lock.json
+  index.html
+  vite.config.js
+  eslint.config.js
+  src/
+    main.jsx
+    App.jsx
+    ProgramComponent.jsx
+    index.css
+```
+
+`ProgramComponent.jsx` ki jagah table mein diya actual component filename hoga. Program 10 mein `src/StyledComponent.css` bhi hai.
 
 ## Sirf ek project rakhna hai
 
-Jis program ki zarurat hai, uska **poora folder** rakho; us folder ke bahar ke baaki programs delete kar sakte ho. Selected folder ko repo se bahar copy/move karke bhi `npm install` aur `npm run dev` se chala sakte ho. Is folder ke andar ki project files saath rakho. Kisi doosre program ya parent `exp/package.json` ki dependency nahi hai.
+Jis project ki zarurat hai uska **poora folder** rakho. Baaki project folders delete kar sakte ho. Selected folder ko repo se bahar copy/move karke bhi `npm install` aur `npm run dev` se chala sakte ho. Kisi parent setup ya doosre project ki file ki zarurat nahi hai.
 
-## App.jsx copy karna hai
+Program edit karne ke liye uski component file kholo. `src/App.jsx` us project ki entry component hai; lifecycle project mein wahi mount/unmount button bhi manage karti hai. Code ke upar short usage steps aur har project ke README mein complete run/output instructions hain.
 
-- [Browse the seven programs and copy instructions](exp/README.md#programs)
-- [Copyable program files](exp/programs/)
-
-Programs 4–9 each need only their `App.jsx` copied into your own `src/App.jsx`. Program 10 also needs `StyledComponent.css` because it demonstrates external CSS. Keep your project's `src/main.jsx`.
-
-## Sabhi programs ka combined preview
-
-Poore collection ke dropdown preview ke liye saare program folders rakho. Repo root se:
-
-```bash
-cd exp
-npm install
-npm run dev
-```
-
-See the [full README](exp/README.md) for expected results and validation commands. Har project ki `.gitignore` file `node_modules/` aur `dist/` ko GitHub se exclude karti hai.
+Programs 1–3 manual mein plain JavaScript exercises hain; yahan React programs 4–10 hain. Har project ko uske folder se `npm run lint` aur `npm run build` se check kar sakte ho.
