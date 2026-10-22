@@ -1,0 +1,13 @@
+# Local tooling and credentials
+.agents/
+.codex/
+.aws/
+.env
+.env.*
+!.env.example
+
+# Generated files
+node_modules/
+dist/
+*.log
+.DS_Store
